@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github on Mainroad</title>
+    <title>github on </title>
     <link>/tags/github/</link>
-    <description>Recent content in github on Mainroad</description>
+    <description>Recent content in github on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>githubサーバでのサイト更新</title>
+      <link>/post/update/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/post/update/</guid>
+      <description>サイトの更新 サイトを生成した後の更新について記載していく。
+hugo serverで変更を確認しながら、編集を進める。
+できたら、hugo new site で作ったディレクトリでhugoでpublicの中身を更新する。
+その後、publicをgithubリポジトリのディレクトリにコピーする。
+(base) ~ $ cp -r public/* ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ cd ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ git add . (base) ~ $ git commit -m &amp;#34;first commit&amp;#34; (base) ~ $ git push origin main これで、反映されるが、多少時間がかかる。</description>
+    </item>
     <item>
       <title>githubサーバでのサイト生成</title>
       <link>/post/page-upload/</link>
