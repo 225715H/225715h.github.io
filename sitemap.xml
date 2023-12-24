@@ -11,6 +11,36 @@
     <loc>/docs/faq/</loc>
     <lastmod>2022-01-24T14:00:00+00:00</lastmod>
   </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/github/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/page-upload/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/hugo/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/site/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/startup/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/about/</loc>
     <lastmod>2022-01-25T14:00:00+00:00</lastmod>
   </url><url>
@@ -20,19 +50,10 @@
     <loc>/tags/installation/</loc>
     <lastmod>2022-01-24T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/basic-elements/</loc>
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/basic-elements/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/css/</loc>
@@ -42,9 +63,6 @@
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/html/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
     <lastmod>2018-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/hugo-template-primer/</loc>
@@ -63,9 +81,6 @@
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/templates/</loc>

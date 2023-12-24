@@ -6,8 +6,22 @@
     <description>Recent content in Categories on Mainroad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo</title>
+      <link>/categories/hugo/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/categories/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>startup</title>
+      <link>/categories/startup/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/categories/startup/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Development</title>
       <link>/categories/development/</link>
