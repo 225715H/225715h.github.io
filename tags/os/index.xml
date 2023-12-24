@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>os on </title>
+    <link>/tags/os/</link>
+    <description>Recent content in os on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OS 11.1</title>
+      <link>/post/os11-1/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/post/os11-1/</guid>
+      <description>11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &amp;#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&amp;#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &amp;#39;e225715-02&amp;#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid: 1001 name: e225715 Domain &amp;#39;e225715-02&amp;#39; started +braun+e225715 ie-virsh attach-disk 02 /home/open/Fedora/Fedora-Server-dvd-x86_64-36_Beta-1.4.iso uid: 19832 gid: 1001 name: e225715 Disk attached successfully ## console から UEFI shell 経由で DVD boot する +braun+e225715 ie-virsh console 02 UEFI の Shell&amp;gt; を exitで抜けると、UEFI manu がでる ここで、boot manager menu で QEMU DVD-ROM を選択する その後、install-fedora を選択する control + ]　で抜ける</description>
+    </item>
+  </channel>
+</rss>

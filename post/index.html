@@ -105,6 +105,23 @@ hugo serverで変更を確認しながら、編集を進める。
 雛形の作成 まず、hugoコマンドでサイトのディレクトリを作る。
 (base) ~ $ hugo new site &lt;ディレクトリ名&gt; 中略 Just a few more steps... 1. Change the current directory to /Users/.../... 2. Create or install a theme: - Create a new theme with the command &#34;hugo new theme &lt;THEMENAME&gt;&#34; - Install a theme from https://themes.gohugo.io/ 3. Edit hugo.toml, setting the &#34;theme&#34; property to the theme name. 4. Create new content with the command &#34;hugo new content &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/os11-1/" rel="bookmark">
+			OS 11.1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-12-01T00:00:00Z">December 01, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/os/" rel="category">os</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &#39;e225715-02&#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid: 1001 name: e225715 Domain &#39;e225715-02&#39; started +braun+e225715 ie-virsh attach-disk 02 /home/open/Fedora/Fedora-Server-dvd-x86_64-36_Beta-1.4.iso uid: 19832 gid: 1001 name: e225715 Disk attached successfully ## console から UEFI shell 経由で DVD boot する +braun+e225715 ie-virsh console 02 UEFI の Shell&gt; を exitで抜けると、UEFI manu がでる ここで、boot manager menu で QEMU DVD-ROM を選択する その後、install-fedora を選択する control + ]　で抜ける
+	</div>
 </article>
 </main>
 
@@ -126,6 +143,7 @@ hugo serverで変更を確認しながら、編集を進める。
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/page-upload/">githubサーバでのサイト生成</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/os11-1/">OS 11.1</a></li>
 		</ul>
 	</div>
 </div>
@@ -136,6 +154,10 @@ hugo serverで変更を確認しながら、編集を進める。
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/os/">os</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/startup/">startup</a>&nbsp;
@@ -153,7 +175,9 @@ hugo serverで変更を確認しながら、編集を進める。
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="os">os (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vm/" title="vm">vm (1)</a>
 	</div>
 </div>
 </aside>

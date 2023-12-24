@@ -41,6 +41,18 @@
     <loc>/categories/update/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/os/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/os/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/os11-1/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/vm/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/docs/</loc>
   </url>
 </urlset>
