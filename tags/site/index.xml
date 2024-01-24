@@ -6,18 +6,38 @@
     <description>Recent content in site on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>サイトのあれこれチートシート(Mainroad)</title>
+      <link>/post/mysite/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/post/mysite/</guid>
+      <description>タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。
+title: ポストのタイトルを反映する
+lead: タイトルの下のリード文的なのを反映する
+description: よくわかっていない。
+date: 日付が反映される
+tags: タグ付けができる
+categories: カテゴリー分けができる
+menu: 上部にあるメニューバーみたいなところに設定すると追加できる。 weight:で置く位置を指定できる（多分）。 name:でメニューバーに反映される名前を決められる。指定しない場合、タイトルと同じになる。
+--- title: lead: description: date: tags: categories: menu: main: name: weight: --- マークダウンの書き方 基本はthemes/Mainroad/sampleSite/post/basic-elements.mdに書いてある。
+カスタマイズ 画像の反映 gitsite2/static/img内に画像をおく。
+gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイト上部のアイコンが設定できる。
+[Author]で適切なパスを指定すると自身のアイコンを設定できる。
+大体はthemes/Mainroad/sampleSite/post/customization.mdに書いてある
+以上</description>
+    </item>
     <item>
       <title>githubサーバでのサイト更新</title>
       <link>/post/update/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       <guid>/post/update/</guid>
       <description>サイトの更新 サイトを生成した後の更新について記載していく。
-hugo serverで変更を確認しながら、編集を進める。
-できたら、hugo new site で作ったディレクトリでhugoでpublicの中身を更新する。
-その後、publicをgithubリポジトリのディレクトリにコピーする。
-(base) ~ $ cp -r public/* ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ cd ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ git add . (base) ~ $ git commit -m &amp;#34;first commit&amp;#34; (base) ~ $ git push origin main これで、反映されるが、多少時間がかかる。</description>
+新しいポストを作る hugo serverで変更を確認しながら、編集を進める。
+できたら、hugo new site で作ったディレクトリ(筆者はgitsite2)でhugoを実行し、publicの中身を更新する。
+サイトを更新する その後、publicをgithubリポジトリのディレクトリにコピーする。
+(base) ~ $ cp -r public/* ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ cd ../&amp;lt;ユーザー名&amp;gt;.github.io (base) ~ $ git add . (base) ~ $ git commit -m &amp;#34;update&amp;#34; (base) ~ $ git push origin main これで、反映されるが、多少時間がかかる。</description>
     </item>
     <item>
       <title>githubサーバでのサイト生成</title>
@@ -28,7 +48,7 @@ hugo serverで変更を確認しながら、編集を進める。
 実際にやってみる 参考にしたサイト
 上記を参考にgithubでのサイト生成を行なった。
 雛形の作成 まず、hugoコマンドでサイトのディレクトリを作る。
-(base) ~ $ hugo new site &amp;lt;ディレクトリ名&amp;gt; 中略 Just a few more steps... 1. Change the current directory to /Users/.../... 2. Create or install a theme: - Create a new theme with the command &amp;#34;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;#34; - Install a theme from https://themes.gohugo.io/ 3. Edit hugo.toml, setting the &amp;#34;theme&amp;#34; property to the theme name. 4. Create new content with the command &amp;#34;hugo new content &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.</description>
+(base) ~ $ hugo new site gitsite2 中略 Just a few more steps... 1. Change the current directory to /Users/.../... 2. Create or install a theme: - Create a new theme with the command &amp;#34;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;#34; - Install a theme from https://themes.gohugo.io/ 3. Edit hugo.toml, setting the &amp;#34;theme&amp;#34; property to the theme name. 4. Create new content with the command &amp;#34;hugo new content &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.</description>
     </item>
   </channel>
 </rss>

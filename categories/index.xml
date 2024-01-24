@@ -6,27 +6,41 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mainroad</title>
+      <link>/categories/mainroad/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/mainroad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>markdown</title>
+      <link>/categories/markdown/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>post</title>
+      <link>/categories/post/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/post/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>github</title>
+      <link>/categories/github/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/categories/github/</guid>
+      <description></description>
+    </item>
     <item>
       <title>hugo</title>
       <link>/categories/hugo/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       <guid>/categories/hugo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>startup</title>
-      <link>/categories/startup/</link>
-      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/startup/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>update</title>
-      <link>/categories/update/</link>
-      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/update/</guid>
       <description></description>
     </item>
     <item>

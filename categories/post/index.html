@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>os - </title>
+	<title>post - </title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="os" />
+		<meta property="og:title" content="post" />
 <meta property="og:description" content="John Doe&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/categories/os/" />
+<meta property="og:url" content="/categories/post/" />
 
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/categories/os/index.xml" title="">
+	<link rel="alternate" type="application/rss+xml" href="/categories/post/index.xml" title="">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -69,23 +69,37 @@
 			
 <main class="main list" role="main">
 	<header class="main__header">
-		<h1 class="main__title">os</h1>
+		<h1 class="main__title">post</h1>
 	</header><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/os11-1/" rel="bookmark">
-			OS 11.1
+			<a href="/post/mysite/" rel="bookmark">
+			サイトのあれこれチートシート(Mainroad)
 			</a>
 		</h2>
+		<p class="list__lead post__lead">#備忘録</p>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-12-01T00:00:00Z">December 01, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/os/" rel="category">os</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-01-24T00:00:00Z">January 24, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/markdown/" rel="category">markdown</a>, <a class="meta__link" href="/categories/mainroad/" rel="category">mainroad</a>, <a class="meta__link" href="/categories/post/" rel="category">post</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &#39;e225715-02&#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid: 1001 name: e225715 Domain &#39;e225715-02&#39; started +braun+e225715 ie-virsh attach-disk 02 /home/open/Fedora/Fedora-Server-dvd-x86_64-36_Beta-1.4.iso uid: 19832 gid: 1001 name: e225715 Disk attached successfully ## console から UEFI shell 経由で DVD boot する +braun+e225715 ie-virsh console 02 UEFI の Shell&gt; を exitで抜けると、UEFI manu がでる ここで、boot manager menu で QEMU DVD-ROM を選択する その後、install-fedora を選択する control + ]　で抜ける
+		タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。
+title: ポストのタイトルを反映する
+lead: タイトルの下のリード文的なのを反映する
+description: よくわかっていない。
+date: 日付が反映される
+tags: タグ付けができる
+categories: カテゴリー分けができる
+menu: 上部にあるメニューバーみたいなところに設定すると追加できる。 weight:で置く位置を指定できる（多分）。 name:でメニューバーに反映される名前を決められる。指定しない場合、タイトルと同じになる。
+--- title: lead: description: date: tags: categories: menu: main: name: weight: --- マークダウンの書き方 基本はthemes/Mainroad/sampleSite/post/basic-elements.mdに書いてある。
+カスタマイズ 画像の反映 gitsite2/static/img内に画像をおく。
+gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイト上部のアイコンが設定できる。
+[Author]で適切なパスを指定すると自身のアイコンを設定できる。
+大体はthemes/Mainroad/sampleSite/post/customization.mdに書いてある
+以上
 	</div>
 </article>
 </main>
