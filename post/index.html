@@ -46,6 +46,13 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">about</span>
@@ -74,6 +81,24 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/udemy-django-helloworld/" rel="bookmark">
+			DjangoのHelloWorld
+			</a>
+		</h2>
+		<p class="list__lead post__lead">#備忘録</p>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-01-25T00:00:00Z">January 25, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/udemy/" rel="category">udemy</a>, <a class="meta__link" href="/categories/python/" rel="category">python</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		プロジェクトの作成 任意のフォルダでdjango-admin startproject &lt;ディレクトリ名&gt;を実行する
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/mysite/" rel="bookmark">
 			サイトのあれこれチートシート(Mainroad)
 			</a>
@@ -86,20 +111,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。
-title: ポストのタイトルを反映する
-lead: タイトルの下のリード文的なのを反映する
-description: よくわかっていない。
-date: 日付が反映される
-tags: タグ付けができる
-categories: カテゴリー分けができる
-menu: 上部にあるメニューバーみたいなところに設定すると追加できる。 weight:で置く位置を指定できる（多分）。 name:でメニューバーに反映される名前を決められる。指定しない場合、タイトルと同じになる。
---- title: lead: description: date: tags: categories: menu: main: name: weight: --- マークダウンの書き方 基本はthemes/Mainroad/sampleSite/post/basic-elements.mdに書いてある。
-カスタマイズ 画像の反映 gitsite2/static/img内に画像をおく。
-gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイト上部のアイコンが設定できる。
-[Author]で適切なパスを指定すると自身のアイコンを設定できる。
-大体はthemes/Mainroad/sampleSite/post/customization.mdに書いてある
-以上
+		タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。 title: ポストのタイトルを反映する lead: タイ
 	</div>
 </article><article class="list__item post">
 	
@@ -117,11 +129,7 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		サイトの更新 サイトを生成した後の更新について記載していく。
-新しいポストを作る hugo serverで変更を確認しながら、編集を進める。
-できたら、hugo new site で作ったディレクトリ(筆者はgitsite2)でhugoを実行し、publicの中身を更新する。
-サイトを更新する その後、publicをgithubリポジトリのディレクトリにコピーする。
-(base) ~ $ cp -r public/* ../&lt;ユーザー名&gt;.github.io (base) ~ $ cd ../&lt;ユーザー名&gt;.github.io (base) ~ $ git add . (base) ~ $ git commit -m &#34;update&#34; (base) ~ $ git push origin main これで、反映されるが、多少時間がかかる。
+		サイトの更新 サイトを生成した後の更新について記載していく。 新しいポストを作る hugo serverで変更を確
 	</div>
 </article><article class="list__item post">
 	
@@ -139,11 +147,7 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		実行環境 有料版のgithubでないとサーバーが使えない
-実際にやってみる 参考にしたサイト
-上記を参考にgithubでのサイト生成を行なった。
-雛形の作成 まず、hugoコマンドでサイトのディレクトリを作る。
-(base) ~ $ hugo new site gitsite2 中略 Just a few more steps... 1. Change the current directory to /Users/.../... 2. Create or install a theme: - Create a new theme with the command &#34;hugo new theme &lt;THEMENAME&gt;&#34; - Install a theme from https://themes.gohugo.io/ 3. Edit hugo.toml, setting the &#34;theme&#34; property to the theme name. 4. Create new content with the command &#34;hugo new content &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.
+		実行環境 有料版のgithubでないとサーバーが使えない 実際にやってみる 参考にしたサイト 上記を参考にg
 	</div>
 </article><article class="list__item post">
 	
@@ -160,7 +164,7 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &#39;e225715-02&#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid: 1001 name: e225715 Domain &#39;e225715-02&#39; started +braun+e225715 ie-virsh attach-disk 02 /home/open/Fedora/Fedora-Server-dvd-x86_64-36_Beta-1.4.iso uid: 19832 gid: 1001 name: e225715 Disk attached successfully ## console から UEFI shell 経由で DVD boot する +braun+e225715 ie-virsh console 02 UEFI の Shell&gt; を exitで抜けると、UEFI manu がでる ここで、boot manager menu で QEMU DVD-ROM を選択する その後、install-fedora を選択する control + ]　で抜ける
+		11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &#39;e225715-02&#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid:
 	</div>
 </article>
 </main>
@@ -181,6 +185,7 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/page-upload/">githubサーバでのサイト生成</a></li>
@@ -191,11 +196,14 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="markdown">markdown (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="os">os (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/udemy/" title="udemy">udemy (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vm/" title="vm">vm (1)</a>
 	</div>
 </div>

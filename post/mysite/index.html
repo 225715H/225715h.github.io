@@ -47,6 +47,13 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">about</span>
@@ -96,6 +103,10 @@
 よくわかっていない。</p>
 </li>
 <li>
+<p>thumbnail:
+サイトのタブに画像の挿入ができる。visibility: list でリストでの画像表示ができる。指定しなければポストでも表示される。</p>
+</li>
+<li>
 <p>date:
 日付が反映される</p>
 </li>
@@ -118,6 +129,9 @@ name:でメニューバーに反映される名前を決められる。指定し
 title: 
 lead: 
 description: 
+thumbnail:
+  src: 
+  visibility:
 date: 
 tags:
 categories:
@@ -173,6 +187,12 @@ menu:
 			<p class="pager__title">githubサーバでのサイト更新</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/post/udemy-django-helloworld/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">DjangoのHelloWorld</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -190,6 +210,7 @@ menu:
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/page-upload/">githubサーバでのサイト生成</a></li>
@@ -200,11 +221,14 @@ menu:
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="markdown">markdown (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="os">os (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/udemy/" title="udemy">udemy (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vm/" title="vm">vm (1)</a>
 	</div>
 </div>

@@ -46,6 +46,13 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">about</span>
@@ -86,20 +93,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。
-title: ポストのタイトルを反映する
-lead: タイトルの下のリード文的なのを反映する
-description: よくわかっていない。
-date: 日付が反映される
-tags: タグ付けができる
-categories: カテゴリー分けができる
-menu: 上部にあるメニューバーみたいなところに設定すると追加できる。 weight:で置く位置を指定できる（多分）。 name:でメニューバーに反映される名前を決められる。指定しない場合、タイトルと同じになる。
---- title: lead: description: date: tags: categories: menu: main: name: weight: --- マークダウンの書き方 基本はthemes/Mainroad/sampleSite/post/basic-elements.mdに書いてある。
-カスタマイズ 画像の反映 gitsite2/static/img内に画像をおく。
-gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイト上部のアイコンが設定できる。
-[Author]で適切なパスを指定すると自身のアイコンを設定できる。
-大体はthemes/Mainroad/sampleSite/post/customization.mdに書いてある
-以上
+		タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。 title: ポストのタイトルを反映する lead: タイ
 	</div>
 </article>
 </main>
@@ -120,6 +114,7 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/page-upload/">githubサーバでのサイト生成</a></li>
@@ -130,11 +125,14 @@ gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイ�
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="markdown">markdown (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="os">os (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/udemy/" title="udemy">udemy (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vm/" title="vm">vm (1)</a>
 	</div>
 </div>

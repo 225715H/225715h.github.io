@@ -13,20 +13,7 @@
       <link>/post/mysite/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       <guid>/post/mysite/</guid>
-      <description>タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。
-title: ポストのタイトルを反映する
-lead: タイトルの下のリード文的なのを反映する
-description: よくわかっていない。
-date: 日付が反映される
-tags: タグ付けができる
-categories: カテゴリー分けができる
-menu: 上部にあるメニューバーみたいなところに設定すると追加できる。 weight:で置く位置を指定できる（多分）。 name:でメニューバーに反映される名前を決められる。指定しない場合、タイトルと同じになる。
---- title: lead: description: date: tags: categories: menu: main: name: weight: --- マークダウンの書き方 基本はthemes/Mainroad/sampleSite/post/basic-elements.mdに書いてある。
-カスタマイズ 画像の反映 gitsite2/static/img内に画像をおく。
-gitsite2/config.tomlの[Params.logo]で適切なパスを指定するとサイト上部のアイコンが設定できる。
-[Author]で適切なパスを指定すると自身のアイコンを設定できる。
-大体はthemes/Mainroad/sampleSite/post/customization.mdに書いてある
-以上</description>
+      <description>タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。 title: ポストのタイトルを反映する lead: タイ</description>
     </item>
   </channel>
 </rss>
