@@ -87,10 +87,132 @@
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<h1 id="プロジェクトの作成">プロジェクトの作成</h1>
+			<h1 id="概要">概要</h1>
+<h2 id="プロジェクトの作成">プロジェクトの作成</h2>
 <p>任意のフォルダで<code>django-admin startproject &lt;ディレクトリ名&gt;</code>を実行することでプロジェクトを作成することができる。</p>
 <p>作成されたディレクトリに移動し、<code>python3 manage.py runserver</code>を実行し、以下の画面が出れば成功である。</p>
 <p><img src="/img-post/udemy-django1.png" alt="runserver"></p>
+<h2 id="ファイルの説明">ファイルの説明</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span>~ $ ls
+</span></span><span style="display:flex;"><span>HelloWorld/ db.sqlite3  manage.py*
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span>~ $ cd HelloWorld
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span>~ $ ls
+</span></span><span style="display:flex;"><span>__init__.py  __pycache__/ asgi.py      settings.py  urls.py      views.py     wsgi.py
+</span></span></code></pre></div><p>作成したプロジェクトの中身は上記のようになっている。</p>
+<p>基本は以下の3つのファイルを編集する。</p>
+<ul>
+<li>
+<p><code>HelloWorld/HelloWorld/setting.py</code>:
+このファイルは、クラス定義した場合にパスを設定したり、アプリ作成した場合に、アプリのディレクトリのパスを設定するファイルである。</p>
+</li>
+<li>
+<p><code>HelloWorld/HelloWorld/urls.py</code>:
+このファイルは、サーバからのリクエストを受け、レスポンスする関数やクラスを記述するファイルである。</p>
+</li>
+<li>
+<p><code>HelloWorld/HelloWorld/views.py</code>:
+このファイルは、レスポンスするために反映する関数やクラスを記述するファイルである。</p>
+</li>
+</ul>
+<h3 id="function-based-view">function based view</h3>
+<p>function based viewとは、大まかにいうと表示を細かく指定して実装するもの。</p>
+<p>つまり、views.pyで関数を定義してその関数自身を呼び出すことができる。</p>
+<h3 id="class-based-view">class based view</h3>
+<p>class based viewとは、大まかにいうと表示をテンプレートに頼ったような簡単に実装できるもの。</p>
+<p>つまり、views.pyでクラスを定義することで他で作成したディレクトリのファイルを呼び出すなどができる。</p>
+<h2 id="アプリの作成">アプリの作成</h2>
+<p><code>python3 manage.py startapp &lt;ディレクトリ名&gt;</code>でアプリを作成することができる。</p>
+<p>今は、表示するファイルが増えたときの役割をはっきりするための階層化みたいな解釈で大丈夫(?)</p>
+<h1 id="実際にやってみる">実際にやってみる</h1>
+<h2 id="目標">目標</h2>
+<p><img src="/img-post/django-helloworld.png" alt="helloworld-goal"></p>
+<p>上記のような表示を目標とする。</p>
+<h2 id="関数を使う">関数を使う</h2>
+<p><code>urls.py</code>を以下のように編集する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib <span style="color:#f92672">import</span> admin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .views <span style="color:#f92672">import</span> helloworldfunction
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;HelloWorld/&#39;</span>, helloworldfunction)
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>pathの引数1には任意のURLconfを指定する。引数2には反映させる関数を設定する。関数は<code>views.py</code>に記述していくので<code>from .views import &lt;関数名&gt;</code>となっている。</p>
+<p>その後、<code>views.py</code>を以下のように記述することで表示される。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">helloworldfunction</span>(request):
+</span></span><span style="display:flex;"><span>    example <span style="color:#f92672">=</span> HttpResponse(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> example
+</span></span></code></pre></div><h2 id="クラスを使う">クラスを使う</h2>
+<p>クラスを使う場合、htmlに記述されたhello worldを表示する。</p>
+<p>まず、<code>urls.py</code>を以下のように編集する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib <span style="color:#f92672">import</span> admin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .views <span style="color:#f92672">import</span> HelloWorldClass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># path(&#39;HelloWorld/&#39;, helloworldfunction),</span>
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;class/&#39;</span>, HelloWorldClass<span style="color:#f92672">.</span>as_view()),
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>呼び出すクラスの後ろに<code>.as_view()</code>をつける。(おまじないみたいなもの)</p>
+<p>クラスをインポートするのを忘れないこと。</p>
+<p>その後、<code>setting.py</code>の<code>DIRS:[]</code>に<code>BASE_DIR / 'templates'</code>と記述する。</p>
+<p><code>BASE_DIR</code>はプロジェクトを作ったディレクトリを変数としてる。その中に,<code>templates</code>というフォルダを読み込むというパスを設定している。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>TEMPLATES <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;BACKEND&#39;</span>: <span style="color:#e6db74">&#39;django.template.backends.django.DjangoTemplates&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;DIRS&#39;</span>: [BASE_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;templates&#39;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;APP_DIRS&#39;</span>: <span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;OPTIONS&#39;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;context_processors&#39;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;django.template.context_processors.debug&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;django.template.context_processors.request&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;django.contrib.auth.context_processors.auth&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;django.contrib.messages.context_processors.messages&#39;</span>,
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>以下になるように<code>templates</code>フォルダを作成する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> ~ $ tree HelloWorld 
+</span></span><span style="display:flex;"><span>HelloWorld
+</span></span><span style="display:flex;"><span>├── HelloWorld
+</span></span><span style="display:flex;"><span>│   ├── __init__.py
+</span></span><span style="display:flex;"><span>│   ├── __pycache__
+</span></span><span style="display:flex;"><span>│   │   ├── __init__.cpython-311.pyc
+</span></span><span style="display:flex;"><span>│   │   ├── settings.cpython-311.pyc
+</span></span><span style="display:flex;"><span>│   │   ├── urls.cpython-311.pyc
+</span></span><span style="display:flex;"><span>│   │   ├── views.cpython-311.pyc
+</span></span><span style="display:flex;"><span>│   │   └── wsgi.cpython-311.pyc
+</span></span><span style="display:flex;"><span>│   ├── asgi.py
+</span></span><span style="display:flex;"><span>│   ├── settings.py
+</span></span><span style="display:flex;"><span>│   ├── urls.py
+</span></span><span style="display:flex;"><span>│   ├── views.py
+</span></span><span style="display:flex;"><span>│   └── wsgi.py
+</span></span><span style="display:flex;"><span>├── db.sqlite3
+</span></span><span style="display:flex;"><span>├── manage.py
+</span></span><span style="display:flex;"><span>└── templates
+</span></span><span style="display:flex;"><span>    └── hello.html
+</span></span></code></pre></div><p>作成したフォルダに、反映させたいhtmlファイルを作成する。
+今回は簡単に以下のように記述する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> ~ $ cat HelloWorld/templates/hello.html 
+</span></span><span style="display:flex;"><span>hello world
+</span></span></code></pre></div><p><code>views.py</code>は以下のように記述する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views.generic <span style="color:#f92672">import</span> TemplateView
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># def helloworldfunction(request):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     example = HttpResponse(&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&#39;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     return example</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorldClass</span>(TemplateView):
+</span></span><span style="display:flex;"><span>    template_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello.html&#39;</span>
+</span></span></code></pre></div><p>汎用ビューである<code>TemplateView</code>をインポートすることで、<code>template_name</code>で指定したファイルのテンプレートを表示することができる。</p>
+<p>変更後、<code>python3 manage.py runserver</code>を実行し、任意のURLconfを入力して目標の出力が得られたらOK</p>
 
 		</div>
 		<footer class="post__footer">
