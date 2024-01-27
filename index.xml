@@ -6,8 +6,15 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webアプリのバージョンアップ</title>
+      <link>/post/django01/</link>
+      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/post/django01/</guid>
+      <description>Webアプリのバージョンアップ ローカルで変更した内容をgitで更新する。 git add . git commit -m &amp;#34;message&amp;#34; git push origin main リモー</description>
+    </item>
     <item>
       <title>DjangoのHelloWorld</title>
       <link>/post/udemy-django-helloworld/</link>
