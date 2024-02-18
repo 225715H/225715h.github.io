@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on </title>
+    <link>/tags/typescript/</link>
+    <description>Recent content in typescript on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ReactNativeを使うための環境設定</title>
+      <link>/post/react-native-setup/</link>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/post/react-native-setup/</guid>
+      <description>環境設定 nodeコマンドの設定 nvs(Node Version Switcher)を使う。 export NVS_HOME=&amp;#34;$HOME/.nvs&amp;#34; git clone https://github.com/jasongin/nvs &amp;#34;$NVS_HOME&amp;#34; . &amp;#34;$NVS_HOME/nvs.sh&amp;#34; install よく使うnvsコマンド</description>
+    </item>
+  </channel>
+</rss>

@@ -79,14 +79,36 @@
 	<article class="post">
 		<header class="post__header">
 			<h1 class="post__title">DjangoのHelloWorld</h1>
-			<p class="post__lead">#備忘録</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-01-25T00:00:00Z">1月 25, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/udemy/" rel="category">udemy</a>, <a class="meta__link" href="/categories/python/" rel="category">python</a>, <a class="meta__link" href="/categories/django/" rel="category">django</a>
 	</span>
 </div></div>
 		</header>
-		<div class="content post__content clearfix">
+		
+<div class="post__toc toc">
+	<div class="toc__title">目次</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a>
+      <ul>
+        <li><a href="#プロジェクトの作成">プロジェクトの作成</a></li>
+        <li><a href="#ファイルの説明">ファイルの説明</a></li>
+        <li><a href="#アプリの作成">アプリの作成</a></li>
+      </ul>
+    </li>
+    <li><a href="#実際にやってみる">実際にやってみる</a>
+      <ul>
+        <li><a href="#目標">目標</a></li>
+        <li><a href="#関数を使う">関数を使う</a></li>
+        <li><a href="#クラスを使う">クラスを使う</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
 			<h1 id="概要">概要</h1>
 <h2 id="プロジェクトの作成">プロジェクトの作成</h2>
 <p>任意のフォルダで<code>django-admin startproject &lt;ディレクトリ名&gt;</code>を実行することでプロジェクトを作成することができる。</p>
@@ -123,6 +145,7 @@
 <h2 id="アプリの作成">アプリの作成</h2>
 <p><code>python3 manage.py startapp &lt;ディレクトリ名&gt;</code>でアプリを作成することができる。</p>
 <p>今は、表示するファイルが増えたときの役割をはっきりするための階層化みたいな解釈で大丈夫(?)</p>
+<hr>
 <h1 id="実際にやってみる">実際にやってみる</h1>
 <h2 id="目標">目標</h2>
 <p><img src="/img-post/django-helloworld.png" alt="helloworld-goal"></p>
@@ -255,9 +278,9 @@
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/django01/" rel="next">
+		<a class="pager__link" href="/post/react-native-setup/" rel="next">
 			<span class="pager__subtitle">次の投稿&thinsp;»</span>
-			<p class="pager__title">Webアプリのバージョンアップ</p>
+			<p class="pager__title">ReactNativeを使うための環境設定</p>
 		</a>
 	</div>
 </nav>
@@ -277,7 +300,7 @@
 	<h4 class="widget__title">最近の投稿</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/django01/">Webアプリのバージョンアップ</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/react-native-setup/">ReactNativeを使うための環境設定</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
@@ -288,15 +311,16 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">タグ</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="markdown">markdown (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/os/" title="os">os (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="typescript">typescript (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/udemy/" title="udemy">udemy (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vm/" title="vm">vm (1)</a>
 	</div>
 </div>
 </aside>

@@ -3,36 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/django/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/django/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/github/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <loc>/tags/node/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/python/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <loc>/tags/react/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/python/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <loc>/post/react-native-setup/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/django01/</loc>
-    <lastmod>2024-01-27T00:00:00+00:00</lastmod>
+    <loc>/tags/typescript/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/django/</loc>
+    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/django/</loc>
+    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/udemy-django-helloworld/</loc>
+    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/python/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/udemy/</loc>
@@ -62,6 +68,9 @@
     <loc>/to_do/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/github/</loc>
+    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/categories/github/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -79,18 +88,6 @@
   </url><url>
     <loc>/about/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/os/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/os/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/os11-1/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/vm/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/docs/</loc>
   </url>

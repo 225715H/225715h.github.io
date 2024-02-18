@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ReactNativeを使うための環境設定 - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="ReactNativeを使うための環境設定" />
+<meta property="og:description" content="環境設定 nodeコマンドの設定 nvs(Node Version Switcher)を使う。 export NVS_HOME=&#34;$HOME/.nvs&#34; git clone https://github.com/jasongin/nvs &#34;$NVS_HOME&#34; . &#34;$NVS_HOME/nvs.sh&#34; install よく使うnvsコマンド" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/react-native-setup/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-18T00:00:00+00:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="My Site." rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/logo.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">My Site.</div>
+					<div class="logo__tagline">Portfolio.</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/to_do/">
+				
+				<span class="menu__text">Todo</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">ReactNativeを使うための環境設定</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-02-18T00:00:00Z">2月 18, 2024</time></div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">目次</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#環境設定">環境設定</a>
+      <ul>
+        <li><a href="#nodeコマンドの設定">nodeコマンドの設定</a></li>
+        <li><a href="#よく使うnvsコマンド">よく使うnvsコマンド</a></li>
+        <li><a href="#xcodeのインストール">Xcodeのインストール</a></li>
+        <li><a href="#androidのインストール">Androidのインストール</a></li>
+        <li><a href="#watchmanのインストール">watchmanのインストール</a></li>
+      </ul>
+    </li>
+    <li><a href="#動作確認">動作確認</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<hr>
+<h1 id="環境設定">環境設定</h1>
+<h2 id="nodeコマンドの設定">nodeコマンドの設定</h2>
+<p><a href="https://github.com/jasongin/nvs">nvs(Node Version Switcher)</a>を使う。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>export NVS_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.nvs&#34;</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/jasongin/nvs <span style="color:#e6db74">&#34;</span>$NVS_HOME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>. <span style="color:#e6db74">&#34;</span>$NVS_HOME<span style="color:#e6db74">/nvs.sh&#34;</span> install
+</span></span></code></pre></div><h2 id="よく使うnvsコマンド">よく使うnvsコマンド</h2>
+<ul>
+<li>
+<p><code>nvs ls-remote</code>:
+nodeの全てのバージョンは表示する</p>
+</li>
+<li>
+<p><code>nvs add lts(or latest)</code>:
+最新のlts(Long Term Supprot)または、最新バージョンをダウンロードする。</p>
+</li>
+<li>
+<p><code>nvs ls</code>:
+現在使用できるバージョンが表示される。</p>
+</li>
+<li>
+<p><code>nvs use lts</code>:
+<code>add</code>したバージョンを指定することで<code>node</code>コマンドが使用できる。</p>
+</li>
+</ul>
+<h2 id="xcodeのインストール">Xcodeのインストール</h2>
+<p>settingからiOSをインストールしておく。</p>
+<p><img src="/img-post/ios-setting.png" alt="ios"></p>
+<p>また、Locationの Command Line Tools が以下のように選択されていることを確認する。</p>
+<p><img src="/img-post/ios-setting2.png" alt="ios"></p>
+<h2 id="androidのインストール">Androidのインストール</h2>
+<p><a href="https://developer.android.com/studio?hl=ja">Android Studio</a>をダウンロードする。</p>
+<p>基本的なものは、初めのセットアップでダウンロードできるはず。</p>
+<p>以下は確認である。More ActionsからSDK Managerを選択する。</p>
+<p><img src="/img-post/android1.png" alt="android1"></p>
+<p>上部にあるSDK Platformsを選び、APIが一番最新のものをダウンロードする。</p>
+<p><img src="/img-post/android2.png" alt="android1"></p>
+<p>次は、SDK Toolsを選び、画像のように選択されてるものを使えるようにダウンロードしておく。</p>
+<p><img src="/img-post/android3.png" alt="android1"></p>
+<p>Simulatorは、More ActionsからVirtual Device Managerを選択する。</p>
+<p><img src="/img-post/android1.png" alt="android1"></p>
+<p>上記の+ボタンから新しくsimulatorを作成する。</p>
+<p><img src="/img-post/android4.png" alt="android1"></p>
+<p>アプリを作りたいの端末を選択する。基本はPixelの最新で大丈夫。</p>
+<p><img src="/img-post/android5.png" alt="android1"></p>
+<p>基本は、Recommendedにあるのを選択すればいいが、ない場合はOther Imagesから選択する。</p>
+<p><img src="/img-post/android6.png" alt="android1"></p>
+<p>残りは起動するsimulatorの名前をつけたら、Finishで作成完了。</p>
+<p><img src="/img-post/android7.png" alt="android1"></p>
+<p>最後に ~/.zshrcファイルに以下を追加する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># Android Studio</span>
+</span></span><span style="display:flex;"><span>export ANDROID_HOME<span style="color:#f92672">=</span>$HOME/Library/Android/sdk
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$ANDROID_HOME/platform-tools:$PATH
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$ANDROID_HOME/emulator:$PATH
+</span></span></code></pre></div><p><code>adb --version</code>でバージョンが確認できれば設定完了。</p>
+<h2 id="watchmanのインストール">watchmanのインストール</h2>
+<p><a href="https://brew.sh/">brew</a>コマンドを使って、watchmanをインストールしていく。</p>
+<p><code>brew install watchman</code></p>
+<p>その後、<code>brew list</code>でインストールできているか確認する。</p>
+<hr>
+<h1 id="動作確認">動作確認</h1>
+<p>アプリを作成したいディレクトリに移動し、<code>nvs use lts</code>で<code>node</code>コマンドを使えるようにしてプロジェクトを作成する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>npx create-expo-app --template
+</span></span><span style="display:flex;"><span>✔ Choose a template: › Blank <span style="color:#f92672">(</span>TypeScript<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>✔ What is your app named? … &lt;ディレクトリ名&gt;
+</span></span><span style="display:flex;"><span>✔ Downloaded and extracted project files.
+</span></span></code></pre></div><p>初めの項目は、Blank (TypeScript)を選択する。次の項目は、プロジェクト名をつけてあげればディレクトリとして作成される。</p>
+<p>その後、作成されたディレクトリに移動し、<code>npx expo start</code>でsimulatorを起動できる。</p>
+<p><code>npx expo start</code>でサーバが立てられない場合、<code>npm install</code>を実行するとできるようになる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>› Scan the QR code above with Expo Go <span style="color:#f92672">(</span>Android<span style="color:#f92672">)</span> or the Camera app <span style="color:#f92672">(</span>iOS<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Using Expo Go
+</span></span><span style="display:flex;"><span>› Press s │ switch to development build
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press a │ open Android
+</span></span><span style="display:flex;"><span>› Press i │ open iOS simulator
+</span></span><span style="display:flex;"><span>› Press w │ open web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press j │ open debugger
+</span></span><span style="display:flex;"><span>› Press r │ reload app
+</span></span><span style="display:flex;"><span>› Press m │ toggle menu
+</span></span><span style="display:flex;"><span>› Press o │ open project code in your editor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press ? │ show all commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Logs <span style="color:#66d9ef">for</span> your project will appear below. Press Ctrl+C to exit.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ?を入力すると細かくでコマンドが出てくる</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press s │ switch to development build
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press a │ open Android
+</span></span><span style="display:flex;"><span>› shift+a │ <span style="color:#66d9ef">select</span> a device or emulator
+</span></span><span style="display:flex;"><span>› Press i │ open iOS simulator
+</span></span><span style="display:flex;"><span>› shift+i │ <span style="color:#66d9ef">select</span> a simulator
+</span></span><span style="display:flex;"><span>› Press w │ open web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>› Press r │ reload app
+</span></span><span style="display:flex;"><span>› Press j │ open debugger
+</span></span><span style="display:flex;"><span>› Press m │ toggle menu
+</span></span><span style="display:flex;"><span>› shift+m │ more tools
+</span></span><span style="display:flex;"><span>› Press o │ open project code in your editor
+</span></span><span style="display:flex;"><span>› Press c │ show project QR
+</span></span></code></pre></div><p>上記に従って、タイプするとsimulatorが起動する。</p>
+<p>起動後に、expo goがインストールされる。それぞれディレクトリ直下の<code>app.tsx</code>が反映され、以下のように表示できていればセットアップ完了。</p>
+<p><img src="/img-post/ios-image.png" alt="iphone"></p>
+<p><img src="/img-post/android-image.png" alt="android1"></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/react/" rel="tag">react</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/typescript/" rel="tag">typescript</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/node/" rel="tag">node</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Motoki avatar" src="/img/ava.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">Motokiについて</span>
+	</div>
+	<div class="authorbox__description">
+		I&rsquo;m a student.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/udemy-django-helloworld/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">DjangoのHelloWorld</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="検索…" value="" name="q" aria-label="検索…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">最近の投稿</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/react-native-setup/">ReactNativeを使うための環境設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/page-upload/">githubサーバでのサイト生成</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">タグ</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="markdown">markdown (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/site/" title="site">site (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="typescript">typescript (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/udemy/" title="udemy">udemy (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 .
+			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

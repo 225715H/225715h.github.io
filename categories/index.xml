@@ -6,19 +6,19 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>django</title>
       <link>/categories/django/</link>
-      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       <guid>/categories/django/</guid>
       <description></description>
     </item>
     <item>
       <title>python</title>
       <link>/categories/python/</link>
-      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       <guid>/categories/python/</guid>
       <description></description>
     </item>
@@ -62,13 +62,6 @@
       <link>/categories/hugo/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       <guid>/categories/hugo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>os</title>
-      <link>/categories/os/</link>
-      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/os/</guid>
       <description></description>
     </item>
   </channel>

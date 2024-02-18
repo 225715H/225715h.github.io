@@ -6,14 +6,14 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Webアプリのバージョンアップ</title>
-      <link>/post/django01/</link>
-      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>/post/django01/</guid>
-      <description>Webアプリのバージョンアップ ローカルで変更した内容をgitで更新する。 git add . git commit -m &amp;#34;message&amp;#34; git push origin main リモー</description>
+      <title>ReactNativeを使うための環境設定</title>
+      <link>/post/react-native-setup/</link>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/post/react-native-setup/</guid>
+      <description>環境設定 nodeコマンドの設定 nvs(Node Version Switcher)を使う。 export NVS_HOME=&amp;#34;$HOME/.nvs&amp;#34; git clone https://github.com/jasongin/nvs &amp;#34;$NVS_HOME&amp;#34; . &amp;#34;$NVS_HOME/nvs.sh&amp;#34; install よく使うnvsコマンド</description>
     </item>
     <item>
       <title>DjangoのHelloWorld</title>
@@ -51,18 +51,11 @@
       <description>実行環境 有料版のgithubでないとサーバーが使えない 実際にやってみる 参考にしたサイト 上記を参考にg</description>
     </item>
     <item>
-      <title>筆者について</title>
+      <title>筆者</title>
       <link>/about/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       <guid>/about/</guid>
       <description>github このサイトのgitリポジトリは以下である。 github 成果物 djangoでとりあえず作成した簡易的なTodo</description>
-    </item>
-    <item>
-      <title>OS 11.1</title>
-      <link>/post/os11-1/</link>
-      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/post/os11-1/</guid>
-      <description>11.1 +braun+e225715 qemu-img create -f qcow2 /mnt/ie-virsh/e22/e225715/e225715-02.qcow2 40G Formatting &amp;#39;/mnt/ie-virsh/e22/e225715/e225715-02.qcow2&amp;#39;, fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=42949672960 lazy_refcounts=off refcount_bits=16 +braun+e225715 ie-virsh define 02 uid: 19832 gid: 1001 name: e225715 generate xml : /etc/libvirt/qemu/e22/e225715/e225715-02.xml vnc password : 2nqip*Xf Domain &amp;#39;e225715-02&amp;#39; defined from /etc/libvirt/qemu/e22/e225715/e225715-02.xml ## 起動 +braun+e225715 ie-virsh start 02 uid: 19832 gid:</description>
     </item>
   </channel>
 </rss>
