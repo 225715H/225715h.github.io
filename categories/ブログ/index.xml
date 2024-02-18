@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>site on </title>
-    <link>/tags/site/</link>
-    <description>Recent content in site on </description>
+    <title>ブログ on </title>
+    <link>/categories/%E3%83%96%E3%83%AD%E3%82%B0/</link>
+    <description>Recent content in ブログ on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>サイトのあれこれチートシート(Mainroad)</title>
       <link>/post/mysite/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       <guid>/post/mysite/</guid>
       <description>タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。 title: ポストのタイトルを反映する lead: タイ</description>
+    </item>
+    <item>
+      <title>githubサーバでのサイト更新</title>
+      <link>/post/update/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/post/update/</guid>
+      <description>サイトの更新 サイトを生成した後の記事更新について記載していく。 新しいポストを作る hugo new &amp;lt;cont</description>
     </item>
     <item>
       <title>githubサーバでのサイト生成</title>

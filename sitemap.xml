@@ -5,6 +5,9 @@
     <loc>/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/node/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,13 +26,13 @@
     <loc>/tags/typescript/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
+    <loc>/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</loc>
+    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/django/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/django/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/udemy-django-helloworld/</loc>
@@ -38,25 +41,16 @@
     <loc>/tags/python/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/python/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/udemy/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/udemy/</loc>
+    <loc>/categories/web%E9%96%8B%E7%99%BA/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/mainroad/</loc>
+    <loc>/tags/mainroad/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/markdown/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/markdown/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/post/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/site/</loc>
@@ -65,13 +59,13 @@
     <loc>/post/mysite/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/categories/%E3%83%96%E3%83%AD%E3%82%B0/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/to_do/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/github/</loc>
-    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/github/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/update/</loc>
@@ -81,9 +75,6 @@
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/hugo/</loc>
-    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/hugo/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/about/</loc>
