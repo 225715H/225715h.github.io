@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Todoアプリ①(ReactNative) - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Todoアプリ①(ReactNative)" />
+<meta property="og:description" content="プロジェクトの設定 ESLintの導入 ESLintは、コードの書き方を提案してくれる。nvs use ltsで" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/react01/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-19T00:00:00+00:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="My Site." rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/logo.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">My Site.</div>
+					<div class="logo__tagline">Portfolio.</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Todoアプリ①(ReactNative)</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-02-19T00:00:00Z">2月 19, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/" rel="category">モバイル開発</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">目次</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#プロジェクトの設定">プロジェクトの設定</a>
+      <ul>
+        <li><a href="#eslintの導入">ESLintの導入</a></li>
+        <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="プロジェクトの設定">プロジェクトの設定</h1>
+<h2 id="eslintの導入">ESLintの導入</h2>
+<p>ESLintは、コードの書き方を提案してくれる。<code>nvs use lts</code>で<code>npm</code>コマンドを使えるようにする。</p>
+<p>以下に従って、インストールとeslint の設定を行う。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>npm install eslint --save-dev
+</span></span><span style="display:flex;"><span>npx eslint --init
+</span></span><span style="display:flex;"><span>You can also run this command directly using <span style="color:#e6db74">&#39;npm init @eslint/config&#39;</span>.
+</span></span><span style="display:flex;"><span>✔ How would you like to use ESLint? · style　 <span style="color:#75715e"># スタイルまで提案して欲しいため、一番下を選択</span>
+</span></span><span style="display:flex;"><span>✔ What type of modules does your project use? · esm  <span style="color:#75715e"># javascript module を選択</span>
+</span></span><span style="display:flex;"><span>✔ Which framework does your project use? · react  <span style="color:#75715e"># reactを選択</span>
+</span></span><span style="display:flex;"><span>✔ Does your project use TypeScript? · No / Yes   <span style="color:#75715e"># yes を選択</span>
+</span></span><span style="display:flex;"><span>✔ Where does your code run? · node  <span style="color:#75715e"># shift + space でnodeだけチェック</span>
+</span></span><span style="display:flex;"><span>✔ How would you like to define a style <span style="color:#66d9ef">for</span> your project? · guide  <span style="color:#75715e"># popularを選択</span>
+</span></span><span style="display:flex;"><span>✔ Which style guide <span style="color:#66d9ef">do</span> you want to follow? · standard-with-typescript  <span style="color:#75715e"># standardを選択</span>
+</span></span><span style="display:flex;"><span>✔ What format <span style="color:#66d9ef">do</span> you want your config file to be in? · JSON  <span style="color:#75715e"># JSONを選択</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Would you like to install them now? · No / Yes  <span style="color:#75715e"># yesを選択</span>
+</span></span><span style="display:flex;"><span>✔ Which package manager <span style="color:#66d9ef">do</span> you want to use? · npm  <span style="color:#75715e"># npmを選択</span>
+</span></span></code></pre></div><p>vsCodeの拡張機能でESLintもインストールし、有効にしておく。</p>
+<p><img src="/img-post/eslint.png" alt="eslint"></p>
+<p>インストールした後に作成された<code>.eslintrs.json</code>のルールに以下を追加する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;rules&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;react/react-in-jsx-scope&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h2 id="ライブラリのインストール">ライブラリのインストール</h2>
+<p>expoの必要なライブラリもインストールしておく。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler react-native-elements
+</span></span></code></pre></div><p><code>package.json</code>のmainを以下のように修正しておく。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;expo-router/entry&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/react/" rel="tag">react</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/typescript/" rel="tag">typescript</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/eslint/" rel="tag">eslint</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Motoki avatar" src="/img/ava.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">Motokiについて</span>
+	</div>
+	<div class="authorbox__description">
+		I&rsquo;m a student.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/react-native-setup/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">ReactNativeを使うための環境設定</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="検索…" value="" name="q" aria-label="検索…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">最近の投稿</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/react01/">Todoアプリ①(ReactNative)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/react-native-setup/">ReactNativeを使うための環境設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/update/">githubサーバでのサイト更新</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">カテゴリー</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/web%E9%96%8B%E7%99%BA/">Web開発</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E3%83%96%E3%83%AD%E3%82%B0/">ブログ</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/">モバイル開発</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/">環境構築</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 .
+			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

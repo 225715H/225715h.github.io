@@ -6,8 +6,15 @@
     <description>Recent content in モバイル開発 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Todoアプリ①(ReactNative)</title>
+      <link>/post/react01/</link>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/post/react01/</guid>
+      <description>プロジェクトの設定 ESLintの導入 ESLintは、コードの書き方を提案してくれる。nvs use ltsで</description>
+    </item>
     <item>
       <title>ReactNativeを使うための環境設定</title>
       <link>/post/react-native-setup/</link>
