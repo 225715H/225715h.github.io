@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web開発 on </title>
+    <title>web開発 on </title>
     <link>/categories/web%E9%96%8B%E7%99%BA/</link>
-    <description>Recent content in Web開発 on </description>
+    <description>Recent content in web開発 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/web%E9%96%8B%E7%99%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerを用いたRails環境の構築</title>
+      <link>/post/rails-docker/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/post/rails-docker/</guid>
+      <description>Docker環境の構築 この記事では、Docker初心者がをRailsアプリケーションの開発環境を構築</description>
+    </item>
     <item>
       <title>DjangoのHelloWorld</title>
       <link>/post/udemy-django-helloworld/</link>

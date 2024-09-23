@@ -6,8 +6,29 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 19 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>/categories/docker/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>rails</title>
+      <link>/categories/rails/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/rails/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>web開発</title>
+      <link>/categories/web%E9%96%8B%E7%99%BA/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/categories/web%E9%96%8B%E7%99%BA/</guid>
+      <description></description>
+    </item>
     <item>
       <title>モバイル開発</title>
       <link>/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/</link>
@@ -20,13 +41,6 @@
       <link>/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</link>
       <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
       <guid>/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web開発</title>
-      <link>/categories/web%E9%96%8B%E7%99%BA/</link>
-      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>/categories/web%E9%96%8B%E7%99%BA/</guid>
       <description></description>
     </item>
     <item>

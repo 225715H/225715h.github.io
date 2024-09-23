@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dockerを用いたRails環境の構築 - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Dockerを用いたRails環境の構築" />
+<meta property="og:description" content="Docker環境の構築 この記事では、Docker初心者がをRailsアプリケーションの開発環境を構築" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/rails-docker/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-09-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-09-23T00:00:00+00:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="My Site." rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/logo.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">My Site.</div>
+					<div class="logo__tagline">Portfolio.</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">posts</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Dockerを用いたRails環境の構築</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-09-23T00:00:00Z">9月 23, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/rails/" rel="category">rails</a>, <a class="meta__link" href="/categories/docker/" rel="category">docker</a>, <a class="meta__link" href="/categories/web%E9%96%8B%E7%99%BA/" rel="category">web開発</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="docker環境の構築">Docker環境の構築</h1>
+<p>この記事では、Docker初心者がをRailsアプリケーションの開発環境を構築する方法について備忘録として書いてます。</p>
+<h2 id="目次">目次</h2>
+<ol>
+<li><a href="#Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90">Rails アプリケーションの作成</a></li>
+<li><a href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90">ファイルの作成</a>
+<ul>
+<li><a href="#dockerfiledev%E3%81%AE%E4%BD%9C%E6%88%90">Dockerfile.devの作成</a></li>
+<li><a href="#docker-composeyml%E3%81%AE%E4%BD%9C%E6%88%90">docker-compose.ymlの作成</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%93%E3%83%AB%E3%83%89%E3%81%A8%E8%B5%B7%E5%8B%95">ビルドと起動</a></li>
+<li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E4%BD%9C%E6%88%90">データベースの作成</a></li>
+<li><a href="#%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E5%BE%8C%E3%81%AE%E5%87%A6%E7%90%86">環境構築後の処理</a>
+<ul>
+<li><a href="#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E8%B5%B7%E5%8B%95%E3%81%A8%E7%B5%82%E4%BA%86">コンテナの起動と終了</a></li>
+<li><a href="#makefile%E3%81%AE%E4%BD%9C%E6%88%90">Makefileの作成</a></li>
+</ul>
+</li>
+<li><a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ</a></li>
+</ol>
+<hr>
+<h2 id="railsアプリケーションの作成">Railsアプリケーションの作成</h2>
+<p>まず、Dockerを使用してRailsアプリケーションを作成します。以下のコマンドを実行し、PostgreSQLをデータベースとして使用するRailsアプリケーションを初期化します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/usr/src/app -w /usr/src/app ruby:3.2 bash -c <span style="color:#e6db74">&#34;gem install rails &amp;&amp; rails new . --database=postgresql&#34;</span>
+</span></span></code></pre></div><p>このコマンドでは、以下のオプションを使用しています：</p>
+<ul>
+<li><code>--database=postgresql</code>：データベースとしてPostgreSQLを指定します。</li>
+</ul>
+<hr>
+<h2 id="ファイルの作成">ファイルの作成</h2>
+<p>RailsアプリケーションをDocker環境で運用するために、必要なファイルを作成します。</p>
+<h3 id="dockerfiledevの作成">Dockerfile.devの作成</h3>
+<p>開発環境用に、ホットリロードやデバッグの容易さを考慮した設定のDockerfileをルートディレクトリに作成します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile.dev</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ベースイメージ</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ruby:3.2.5-slim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 必要なパッケージをインストール</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update -qq <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>      build-essential <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>      libpq-dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>      nodejs <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>      yarn <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>      git <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 作業ディレクトリを設定</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /rails</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Gemfile と Gemfile.lock をコピー</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> Gemfile Gemfile.lock ./<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Bundler をインストールし、gem をインストール</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> gem install bundler <span style="color:#f92672">&amp;&amp;</span> bundle install<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># アプリケーションのソースコードをコピー</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># ポートを公開</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 3000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 開発サーバーを起動</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;rails&#34;</span>, <span style="color:#e6db74">&#34;server&#34;</span>, <span style="color:#e6db74">&#34;-b&#34;</span>, <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p><strong>ポイント：</strong></p>
+<ul>
+<li><strong>シンプルな構成</strong>：本番環境用のマルチステージビルドを使用せず、開発に必要な設定のみを含めています。</li>
+<li><strong>ホットリロード対応</strong>：ボリュームマウントを使用してコード変更を即座に反映します（後述の <code>docker-compose.yml</code> で設定）。</li>
+<li><strong>デバッグの容易さ</strong>：開発中にコンテナ内でのデバッグがしやすくなっています。</li>
+</ul>
+<h3 id="docker-composeymlの作成">docker-compose.ymlの作成</h3>
+<p>次に、Railsアプリケーションとデータベースを管理するために、<code>docker-compose.yml</code> を作成します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># docker-compose.yml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:14</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">myapp_development</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">db_data:/var/lib/postgresql/data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">myapp-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">context</span>: <span style="color:#ae81ff">.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">dockerfile</span>: <span style="color:#ae81ff">Dockerfile.dev</span> <span style="color:#75715e"># 開発環境用のDockerfileを指定</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">bash -c &#34;rm -f tmp/pids/server.pid &amp;&amp; bundle exec rails server -b 0.0.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">.:/rails</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">bundle_data:/usr/local/bundle</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./tmp:/rails/tmp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_HOST</span>: <span style="color:#ae81ff">db</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_USERNAME</span>: <span style="color:#ae81ff">postgres</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_PASSWORD</span>: <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_NAME</span>: <span style="color:#ae81ff">myapp_development</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">RAILS_ENV</span>: <span style="color:#ae81ff">development</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">db</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">myapp-network</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db_data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">bundle_data</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">myapp-network</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">bridge</span>
+</span></span></code></pre></div><p><strong>ポイント：</strong></p>
+<ul>
+<li><strong><code>db</code> サービス</strong>：PostgreSQLデータベースを提供します。</li>
+<li><strong><code>web</code> サービス</strong>：Railsアプリケーションを提供します。
+<ul>
+<li><strong><code>build</code></strong>：<code>Dockerfile.dev</code> を使用してイメージをビルドします。</li>
+<li><strong><code>command</code></strong>：サーバー起動前に既存のPIDファイルを削除し、Railsサーバーを起動します。</li>
+<li><strong><code>volumes</code></strong>：
+<ul>
+<li><code>.:/rails</code>：ホストのコードをコンテナにマウントし、リアルタイムで変更を反映します。</li>
+<li><code>bundle_data:/usr/local/bundle</code>：Gemのインストールキャッシュを永続化します。</li>
+<li><code>./tmp:/rails/tmp</code>：一時ファイルを共有します。</li>
+</ul>
+</li>
+<li><strong><code>ports</code></strong>：ホストのポート3000をコンテナのポート3000にマッピングします。</li>
+<li><strong><code>environment</code></strong>：環境変数を設定し、データベース接続情報を提供します。</li>
+<li><strong><code>depends_on</code></strong>：<code>web</code> サービスは <code>db</code> サービスに依存します。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ビルドと起動">ビルドと起動</h2>
+<p>ファイルが作成できたら、以下のコマンドでDocker Composeをビルドし、サービスを起動します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d --build
+</span></span></code></pre></div><ul>
+<li><strong><code>-d</code></strong>：バックグラウンドでコンテナを実行します。</li>
+<li><strong><code>--build</code></strong>：Dockerfileの変更を反映してイメージを再ビルドします。</li>
+</ul>
+<p>起動が完了したら、ブラウザで <a href="http://localhost:3000">http://localhost:3000</a> にアクセスして、Railsのウェルカムページが表示されることを確認します。</p>
+<hr>
+<h2 id="データベースの作成">データベースの作成</h2>
+<p>次に、RailsアプリケーションがPostgreSQLデータベースに接続できるように、<code>config/database.yml</code> を編集します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># config/database.yml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">default</span>: <span style="color:#75715e">&amp;default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">adapter</span>: <span style="color:#ae81ff">postgresql</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">encoding</span>: <span style="color:#ae81ff">unicode</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">db</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">username</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_USERNAME&#39;] %&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_PASSWORD&#39;] %&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pool</span>: <span style="color:#ae81ff">&lt;%= ENV.fetch(&#34;RAILS_MAX_THREADS&#34;) { 5 } %&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">development</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_NAME&#39;] %&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &lt;&lt;: *default</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   database: myapp_test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># production:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &lt;&lt;: *default</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   database: myapp_production</span>
+</span></span></code></pre></div><p><strong>ポイント：</strong></p>
+<ul>
+<li><strong><code>host: db</code></strong>：Docker Composeのネットワーク内で定義された <code>db</code> サービスに接続します。</li>
+<li><strong>環境変数の利用</strong>：セキュリティと柔軟性のため、データベースの接続情報を環境変数から取得します。</li>
+</ul>
+<h3 id="データベースの作成とマイグレーション">データベースの作成とマイグレーション</h3>
+<p>以下のコマンドを実行して、データベースを作成し、マイグレーションを実行します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># データベースの作成</span>
+</span></span><span style="display:flex;"><span>docker-compose exec web rails db:create
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># マイグレーションの実行</span>
+</span></span><span style="display:flex;"><span>docker-compose exec web rails db:migrate
+</span></span></code></pre></div><p>これで、Dockerを用いたRails環境の構築が完了しました。</p>
+<p><img src="/img-post/rails.png" alt="rails_hello_world"></p>
+<hr>
+<h2 id="環境構築後の処理">環境構築後の処理</h2>
+<h3 id="コンテナの起動と終了">コンテナの起動と終了</h3>
+<p>Docker Composeを使用してコンテナを起動および終了する方法を紹介します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># コンテナの起動</span>
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># コンテナの終了</span>
+</span></span><span style="display:flex;"><span>docker-compose down
+</span></span></code></pre></div><ul>
+<li><strong><code>docker-compose up -d</code></strong>：バックグラウンドでコンテナを起動します。</li>
+<li><strong><code>docker-compose down</code></strong>：コンテナを停止し、ネットワークやボリュームを削除します。</li>
+</ul>
+<h3 id="makefileの作成">Makefileの作成</h3>
+<p>Dockerのコマンドを簡略化するために、<code>Makefile</code> を作成します。プロジェクトのルートディレクトリに <code>Makefile</code> を作成し、以下の内容を追加します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#a6e22e">up</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	docker-compose up -d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">down</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	docker-compose down
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">build</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	docker-compose up -d --build
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">restart</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	docker-compose restart
+</span></span></code></pre></div><p><strong>使い方：</strong></p>
+<ul>
+<li><code>make up</code>：コンテナを起動します。</li>
+<li><code>make down</code>：コンテナを停止します。</li>
+<li><code>make build</code>：イメージを再ビルドしてコンテナを起動します。</li>
+<li><code>make restart</code>：コンテナを再起動します。</li>
+</ul>
+<hr>
+<h2 id="まとめ">まとめ</h2>
+<p>この記事では、Dockerを使用してRailsアプリケーションの開発環境を構築する方法について説明しました。以下のステップを順に実行することで、効率的な開発環境を整えることができます。</p>
+<ol>
+<li><strong>Rails アプリケーションの作成</strong>：Dockerコマンドを使用してRailsアプリケーションを初期化。</li>
+<li><strong>ファイルの作成</strong>：<code>Dockerfile.dev</code> と <code>docker-compose.yml</code> を作成。</li>
+<li><strong>ビルドと起動</strong>：Docker Composeを使用してサービスをビルドし、起動。</li>
+<li><strong>データベースの設定</strong>：<code>config/database.yml</code> を編集し、データベースを作成・マイグレーション。</li>
+<li><strong>環境構築後の処理</strong>：コンテナの起動・終了方法やMakefileの作成。</li>
+</ol>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rails/" rel="tag">rails</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ruby/" rel="tag">ruby</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/docker/" rel="tag">docker</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Motoki avatar" src="/img/ava.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">Motokiについて</span>
+	</div>
+	<div class="authorbox__description">
+		I&rsquo;m a student.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/react01/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">Todoアプリ①(ReactNative)</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="検索…" value="" name="q" aria-label="検索…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">最近の投稿</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/rails-docker/">Dockerを用いたRails環境の構築</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/react01/">Todoアプリ①(ReactNative)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/react-native-setup/">ReactNativeを使うための環境設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/udemy-django-helloworld/">DjangoのHelloWorld</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mysite/">サイトのあれこれチートシート(Mainroad)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">カテゴリー</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/docker/">docker</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/rails/">rails</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/web%E9%96%8B%E7%99%BA/">web開発</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E3%83%96%E3%83%AD%E3%82%B0/">ブログ</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA/">モバイル開発</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/">環境構築</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 .
+			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
