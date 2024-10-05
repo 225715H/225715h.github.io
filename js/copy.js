@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // コピー機能の追加
     button.addEventListener("click", function () {
-      const code = block.innerText.trim();
+      const code = block.textContent.trim();
       navigator.clipboard.writeText(code).then(
         function () {
           button.innerText = "copied!";
