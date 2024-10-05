@@ -15,12 +15,5 @@
       <guid>/post/mysite/</guid>
       <description>タイトルの描き方 以下のようタイトルについてそれぞれ機能を説明する。 title: ポストのタイトルを反映する lead: タイ</description>
     </item>
-    <item>
-      <title>githubサーバでのサイト生成</title>
-      <link>/post/page-upload/</link>
-      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>/post/page-upload/</guid>
-      <description>実行環境 有料版のgithubでないとサーバーが使えない 実際にやってみる 参考にしたサイト 上記を参考にg</description>
-    </item>
   </channel>
 </rss>
