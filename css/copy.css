@@ -1,0 +1,36 @@
+.code-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.copy-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #000000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.copy-button:hover {
+  background-color: #333;
+}
+
+.pre-wrapper {
+  padding-right: 40px; /* 右側に余白を追加してボタンが被らないようにする */
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 0;
+  overflow: auto; /* コードが長い場合にスクロール */
+}
