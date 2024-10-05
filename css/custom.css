@@ -1,3 +1,7 @@
+pre {
+    position: relative; /* コードブロック内にボタンを相対配置 */
+}
+
 .copy-button {
     position: absolute;
     right: 1em;
@@ -7,12 +11,4 @@
     border: none;
     padding: 0.5em;
     cursor: pointer;
-}
-
-.copy-button:hover {
-    background-color: #0056b3;
-}
-
-.copy-button:active {
-    background-color: #003f7f;
 }
