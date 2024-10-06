@@ -229,14 +229,14 @@
 <p>起動が完了したら、ブラウザで <a href="http://localhost:3000">http://localhost:3000</a> にアクセスできることを確認します。</p>
 <hr>
 <h2 id="データベースの作成">データベースの作成</h2>
-<p>次に、RailsアプリケーションがPostgreSQLデータベースに接続できるように、<code>config/database.yml</code> を編集します。</p>
+<p>次に、RailsアプリケーションがPostgreSQLデータベースに接続できるように、<code>config/database.yml</code> を編集します。(ユーザ名やパスワード、データベース名の追加)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># config/database.yml</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">default</span>: <span style="color:#75715e">&amp;default</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">adapter</span>: <span style="color:#ae81ff">postgresql</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">encoding</span>: <span style="color:#ae81ff">unicode</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># ========== 以下を追加 =============</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">db</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_HOST&#39;] %&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">username</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_USERNAME&#39;] %&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_PASSWORD&#39;] %&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5432</span>
@@ -245,8 +245,9 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">development</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*default</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_NAME&#39;] %&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">&lt;%= ENV[&#39;DATABASE_NAME&#39;] %&gt;</span> <span style="color:#75715e"># 修正</span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以下はコメントアウトしても構わない</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># test:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#   &lt;&lt;: *default</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#   database: myapp_test</span>
